@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { Suspense } from "react";
 
 import { ChakraProvider } from '@chakra-ui/react'
 const inter = Inter({ subsets: ["latin"] });
@@ -13,8 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className} style={{backgroundImage: `url("./star.jpg")`}}>
+      <body className={inter.className} style={{backgroundImage: `url("./back.jpg")`}}>
+        <Suspense>
       <ChakraProvider>{children}</ChakraProvider>
+      </Suspense>
         </body>
     </html>
   );
